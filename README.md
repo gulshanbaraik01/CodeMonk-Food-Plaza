@@ -49,7 +49,7 @@ important modules||dependencies:
       
       pip install pillow  => for imagefield in form. (pillow is a fork of PIL (Python Image Library)
       
-      pip install django-crispy-forms   => for creatinf django forms.
+      pip install django-crispy-forms   => for creating django forms.
       
       
 Source Code Editor to performed this specific task:
