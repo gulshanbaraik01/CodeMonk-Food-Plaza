@@ -1,0 +1,119 @@
+*{
+
+
+  color: white;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+#logo {
+  max-height: 42px;
+  margin-right: 10px;
+  margin-top: -3px;
+  display: inline-block;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+  
+  border-color: transparent;
+ 
+
+}
+
+
+.form-container{
+
+  background-color: rgba(231, 130, 90, 0.698);
+  border :0px solid #fff;
+  padding: 35px 40px;
+  margin-top: 15vh;
+ -webkit-box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 4px 50px 1px rgba(0,0,0,1);
+  box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+
+} 
+
+
+/* .form-container_desk{
+ 
+  background-color: teal;
+  border :0px solid #fff;
+  -webkit-box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+  -moz-box-shadow: -1px 4px 50px 1px rgba(0,0,0,1);
+  box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+  height:100%;
+  font-family:sans-serif;
+  font-weight: bold;
+
+} */
+
+
+
+/* Create two equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 69%;
+  padding:50px 5px 20px 50px;
+  height: 100%; /* Should be removed. Only for demonstration */
+  text-align: center;
+}
+
+.column2 {
+  float: right;
+  border-left: 5px solid rgba(3, 196, 115, 0.616);
+  width: 30%;
+  padding:110px 5px 30px 5px;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+.rp{
+
+  
+  margin: 5px;
+  width: 300px;
+  padding-top: 5px 5px 5px 5px ;
+  height: 250px;
+  text-align: center;
+  
+}
+.rpc2{
+    padding-top: 70px;
+  border-top: 3px solid rgb(104, 101, 101);
+ text-align: center;
+  /* background-color: rgb(145, 255, 71); */
+  width: 100%;
+  
+  height: 250px;
+  
+}
+.mx-auto{
+
+
+
+  width: 100%;
+  height: 250px;
+}
+.dsk{
+
+  padding-left: 15px;
+  color: red;
+}

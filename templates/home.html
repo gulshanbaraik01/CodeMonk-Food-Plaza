@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Pretty-Footer.css' %} ">
+
+    <style>
+        * {box-sizing: border-box}
+        .mySlides1{display: none}
+        img {vertical-align: middle;}
+
+        .bottom-left {
+        font-size: 30px;
+        font-weight: bolder;
+        color: white;
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        }
+
+        #pp{
+        background-color: teal;
+        box-sizing: border-box;
+        box-shadow: -1px 4px 15px rgb(240, 8, 8);
+        border-radius: 20px;
+        }
+        /* Slideshow container */
+        .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: rgb(35, 20, 247);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a grey background color */
+        .prev:hover, .next:hover {
+        background-color: #f1f1f1;
+        color: black;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightblue;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="">
+                    <img src="{% static 'logo.png' %}" style="width:50px;height: 50px;margin-top: -10px;"
+                        id="logo"><strong> Food Plaza </strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="about"><strong>About Us</strong></a></li>
+                    <li role="presentation"><a href="login"><strong>SignUp|Login </strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="slideshow-container">
+            <div class="mySlides1">
+              <img src="{% static 'images/kadhaipaneer.jpg' %}" style="width:100%; height: 700px;">
+              <div class="bottom-left"><button id="pp"> <p> Kadhai Paneer </p> </button></div>
+            </div>
+          
+            <div class="mySlides1">
+              <img src="{% static 'images/biriyani.jpg' %}" style="width:100%; height: 700px;">
+              <div class="bottom-left"><button id="pp"> <p> Chicken Biryani </p> </button></div>
+            </div>
+          
+            <div class="mySlides1">
+              <img src="{% static 'images/noodles.jpg' %}" style="width:100%; height: 700px;">
+              <div class="bottom-left"><button id="pp"> <p> Chinese Noodles </p> </button></div>
+            </div>
+
+            <div class="mySlides1">
+                <img src="{% static 'images/dahibada.jpg' %}" style="width:100%; height: 700px;">
+                <div class="bottom-left"><button id="pp"> <p> Dahi Bada </p> </button></div>
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+    <footer style="background-color:lightblue;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 footer-navigation">
+                        <h3><a href="#">Food Plaza Website </a></h3>
+                        <p class="links"><a href="#">Home</a><strong> · </strong><a href="about">About us</a></p>
+                        <p class="company-name">Gulshan Baraik © 2020 </p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 footer-contacts">
+                        <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                            <p><span class="new-line-span">NIT Jamshedpur</span> Jharkhand, India</p>
+                        </div>
+                        <div><i class="fa fa-phone footer-contacts-icon"></i>
+                            <p class="footer-center-info email text-left"> +91 790 3189580</p>
+                        </div>
+                        <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                            <p> <a href="#" target="_blank">support@foodplaza.com</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-4 footer-about">
+                        <h4>About the company</h4>
+                        <p> Established by Gulshan in the year 2020.
+                        </p>
+                        <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a
+                                href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                    class="fa fa-linkedin"></i></a></div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script>
+            var slideIndex = [1,1];
+            var slideId = ["mySlides1", "mySlides2"]
+            showSlides(1, 0);
+            showSlides(1, 1);
+
+            function plusSlides(n, no) {
+            showSlides(slideIndex[no] += n, no);
+            }
+
+            function showSlides(n, no) {
+            var i;
+            var x = document.getElementsByClassName(slideId[no]);
+            if (n > x.length) {slideIndex[no] = 1}    
+            if (n < 1) {slideIndex[no] = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndex[no]-1].style.display = "block";  
+            }
+        </script>
+</body>
+
+</html>

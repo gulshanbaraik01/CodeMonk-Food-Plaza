@@ -1,0 +1,167 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Pretty-Footer.css' %} ">
+
+    <style>
+            
+        *{color:#fff;}
+        
+        .bg{
+        
+            background:url("{% static 'images/dahibada.jpg' %}") repeat; width:100%; height:100%; 
+            /* background-color: gray;  */
+        }
+        .form-container{background-color: rgba(231, 130, 90, 0.698); border :0px solid #fff; padding: 35px 40px; margin-top: 15vh; -webkit-box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+        -moz-box-shadow: -1px 4px 50px 1px rgba(0,0,0,1);
+        box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);} 
+        
+    </style>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightblue;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="#"><img src="{% static 'logo.png' %}" style="width:50px;height: 50px;margin-top: -10px;"
+                        id="logo"><strong> Food Plaza </strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="#"><strong> Welcome </strong></a></li>
+                    <li role="presentation"><a href="/"><strong> Logout </strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+
+
+    <form class="form-container" action="editrecipe" method="POST">
+                            
+        {% csrf_token %}
+    <div style="float: right; margin-right: 30px;">
+        <label>Recipe Type</label>
+        <select name="filter_option" id="" style="color: black;width: 200px; height: 30px; box-shadow: -1px 4px 25px 1px rgb(221, 93, 93);">
+            <option style="color: black;">----Select----</option>
+            {% for i in recipe %}
+            <option style="color: black;">{{ i.recipe_name }}</option>
+            {% endfor %}
+        </select>
+
+    
+    <input class="btn btn-info" style="border-radius: 30px;box-shadow: -1px 4px 15px 1px rgb(221, 93, 93);" type="submit" value="Filter ">
+</div>    
+</form>
+
+    <div class="bg">
+    <div class="container-fluid  " >
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+
+                    <form class="form-container" action="editing_recipe" method="POST">
+
+
+                        {% csrf_token %}
+
+                        <div class="text-center">
+                        <label for="name" ><a href="#">Back To Dashboard</a></label>
+						</div><br>
+                        <h2 style="text-align: center;">Edit Recipe</h2>
+
+                        <div class="form-group">
+                            <label for="exampleInputName">Recipe Name</label>
+                            <input type="text"  class="form-control" id="exampleInputEmail1"  value="{{ item.recipe_name }}"  disabled>
+                            <input type="text" name="rname" class="form-control" id="exampleInputEmail1"  value="{{ item.recipe_name }}" vhidden >
+                            
+                        </div>
+                        <div class="form-group"  >
+                            <label for="exampleInputName">Recipe Type</label>
+                            <select class="form-control" id="sel1" name="rtype" >
+                                <option >{{ item.recipe_type }}</option>
+                                <option>Non-Veg</option>
+                                <option >Veg</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Ingredients</label>
+                            <input  name="ingredient" class="form-control" id="exampleInputEmail1" value="{{ item.ingredient }}" ></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Description</label>
+                            <input  name="desc"  class="form-control" id="exampleInputEmail1"value="{{ item.description }}"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Procedure Of Making</label>
+                            <input  class="form-control"  name="pom" id="exampleInputEmail1" value="{{ item.process_of_making }}"></textarea>
+                        </div>
+                        
+                        <br>
+                        <div class="text-center">
+                              <button type="submit" name="submit" id="rgt" class="btn btn-success"  > update </button>
+                            
+                        </div>
+                        <br>
+                          
+                      </form>
+                </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <footer style="background-color:lightblue;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 footer-navigation">
+                        <h3><a href="#">Food Plaza Website </a></h3>
+                        <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">About us</a></p>
+                        <p class="company-name">Gulshan Baraik © 2020 </p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 footer-contacts">
+                        <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                            <p><span class="new-line-span">NIT Jamshedpur</span> Jharkhand, India</p>
+                        </div>
+                        <div><i class="fa fa-phone footer-contacts-icon"></i>
+                            <p class="footer-center-info email text-left"> +91 790 3189580</p>
+                        </div>
+                        <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                            <p> <a href="#" target="_blank">support@foodplaza.com</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-4 footer-about">
+                        <h4>About the company</h4>
+                        <p> Established by Gulshan in the year 2020.
+                        </p>
+                        <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a
+                                href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                    class="fa fa-linkedin"></i></a></div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+
+</html>

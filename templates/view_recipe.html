@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Descriptions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Pretty-Footer.css' %} ">
+    <style>
+        .bg {
+
+            background: url("{% static '/images/pizza.jpeg' %}") repeat;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        h4, u{
+
+            font-family: sans-serif;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding-top: 15px;
+    
+        }
+        p{
+            
+            font-family: sans-serif;
+            color: rgb(255, 255, 255);
+            margin: 10px;
+            /* border: 0px solid red; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: lightblue;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="#"><img src="{% static 'logo.png' %}"
+                        style="width:50px;height: 50px;margin-top: -10px;" id="logo"><strong> Food Plaza
+                    </strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="#"><strong> Back To Dashboard </strong></a></li>
+                    <li role="presentation"><a href="#"><strong> Welcome </strong></a></li>
+                    <li role="presentation"><a href="/"><strong> Logout </strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="row" style="padding-top: 60px; width: 100%;  background-color: rgb(111, 158, 247);" >
+
+
+        <div class="col" style=" width:70%; float:left;height:100%;">
+
+
+            <div class="card" style="width:100%;">
+
+                <div class="card-body" style="width:100%; padding-left: 35px;">
+                   <strong><h4>Ingredients: </h4></strong>
+
+                    <p> 
+                        {{ item.ingredient }}
+                   
+                        </p>
+                </div>
+
+               
+
+                <div class="card-body" style="width:100%; padding-left: 35px;">
+                    <strong><h4>Process of Making:- </h4></strong>
+ 
+                    <p> 
+                        {{ item.process_of_making }}
+                    </p>
+ 
+ 
+                </div>
+                <br>
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col" style=" width: 30%; float: right; height: 100%; padding-left: 15px;">
+            <div class="card" style="width: 100%;" >
+                <center>
+                    <div class="card">
+                        <img src=" {{ item.picture.url }}" class="card-img-top" alt="Card image cap" style="width:400px ;height: 400px; padding-right:0px;">
+                    
+                        <div style="padding-top: -20px;">
+                            <label for="name"
+                            style="height: 35px; width:100%;font-size: 20px; text-align: center; padding-top: 5px; background-color:  rgb(3, 78, 37);">
+                            <strong> {{ item.recipe_name }}</strong>
+                            </label>
+                        </div>
+                    
+                    </div>
+                </center>
+                    <div class="card-body">
+                        <h4>Description:-</h4>
+                    
+                        <p> {{ item.description }}
+                        </p>
+
+                    </div>
+                    <br>
+                
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <footer style=" background-color: lightblue;width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footer-navigation">
+                    <h3><a href="#">Food Plaza Website </a></h3>
+                    <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">About us</a></p>
+                    <p class="company-name">Gulshan Baraik © 2020 </p>
+                </div>
+                <div class="col-md-4 col-sm-6 footer-contacts">
+                    <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                        <p><span class="new-line-span">NIT Jamshedpur</span> Jharkhand, India</p>
+                    </div>
+                    <div><i class="fa fa-phone footer-contacts-icon"></i>
+                        <p class="footer-center-info email text-left"> +91 790 3189580</p>
+                    </div>
+                    <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                        <p> <a href="#">support@foodplaza.com</a></p>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-4 footer-about">
+                    <h4>About the company</h4>
+                    <p> Established by Gulshan in the year 2020.
+                    </p>
+                    <div class="social-links social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+
+</html>

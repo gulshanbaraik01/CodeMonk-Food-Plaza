@@ -1,0 +1,174 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Pretty-Footer.css' %} ">
+
+    <style>
+            
+        *{color:#fff;}
+        
+        .bg{
+        
+            background:url("{% static '/images/salad1.jpg' %}") no-repeat; width:100%; height:100%; 
+            /* background-color: gray;  */
+        }
+        .form-container{background-color: rgba(150, 145, 143, 0.698); border :0px solid #fff; padding: 35px 40px; margin-top: 15vh; -webkit-box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+        -moz-box-shadow: -1px 4px 50px 1px rgba(0,0,0,1);
+        box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);} 
+        
+    </style>
+    
+</head>
+
+<body class="bg">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightblue;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="/"><img src="{% static 'logo.png' %}" style="width:50px;height: 50px;margin-top: -10px;"
+                        id="logo"><strong> Food Plaza </strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="about"><strong>About Us</strong></a></li>
+                    <li role="presentation"><a href="/"><strong>Home</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="bg">
+    <div class="container-fluid  " >
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+
+                    <form class="form-container" action="addData" method="POST">
+                        {% csrf_token %}
+                        <h2 style="text-align: center;">Registration</h2>
+
+                        <div class="form-group">
+                            <label for="exampleInputName">Name</label>
+                            <input type="text" name="fname" class="form-control" id="exampleInputEmail1" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+    					    <input type="text" name="email" class="form-control" id="email" style="color:black;" onblur="checkavail()" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                        </div>
+                        <div class="form-group"  >
+                            <label for="exampleInputName">Phone</label>
+                            <input type="Phone" name="phone" class="form-control" id="exampleInputPhone1" placeholder="xxx-xxx-xxxx"  pattern="[1-9]{1}[0-9]{2}-[0-9]{3}-[0-9]{4}" required>
+                            <span id='ph' style="font-size:20px;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Address</label>
+                            <textarea name="address" class="form-control" id="exampleInputEmail1" placeholder="Address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password"  onkeyup='check();' name="password" id="psd1" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                        </div>
+                        <div>
+                            <label for="exampleInputPassword1">Confirm Password</label>
+                            <input type="password" onkeyup='check();' name="confpassword" id="psd2" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                            <span id='match' style="font-size:15px;font-family:sans-serif;"></span>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                              <button type="submit" name="submit" id="rgt" class="btn btn-success" disabled > Register</button>
+                            &nbsp;
+                            <button type="reset" id="rst" class="btn btn-success btn">Reset</button>
+                            &nbsp;
+                            &nbsp;
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <label style="font-size:15px;">
+                            Already Have an account !
+                            <a href="login" style="text-decoration: none;">Login </a>
+                            </label>
+                        </div>
+                          
+                      </form>
+                </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <footer style="background-color:lightblue;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 footer-navigation">
+                        <h3><a href="#">Food Plaza Website </a></h3>
+                        <p class="links"><a href="/">Home</a><strong> · </strong><a href="about">About us</a></p>
+                        <p class="company-name">Gulshan Baraik © 2020 </p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 footer-contacts">
+                        <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                            <p><span class="new-line-span">NIT Jamshedpur</span> Jharkhand, India</p>
+                        </div>
+                        <div><i class="fa fa-phone footer-contacts-icon"></i>
+                            <p class="footer-center-info email text-left"> +91 790 3189580</p>
+                        </div>
+                        <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                            <p> <a href="#" target="_blank">support@foodplaza.com</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-4 footer-about">
+                        <h4>About the company</h4>
+                        <p> Established by Gulshan in the year 2020.
+                        </p>
+                        <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a
+                                href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                    class="fa fa-linkedin"></i></a></div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+
+</html>
+
+<script>
+    var check = function() {
+        var p1 = document.getElementById('psd1').value;
+        var p2 = document.getElementById('psd2').value;
+
+        var l = p1.length;
+        if (l<8)
+            {
+                document.getElementById('match').style.color = 'red';
+                document.getElementById('match').innerHTML = 'Length should be minimum of 8 characters !';
+            }
+            else{
+                    if (p1===p2) {
+                    document.getElementById('match').style.color = 'green';
+                    document.getElementById('match').innerHTML = 'Matched';
+                    document.getElementById('rgt').disabled = false;
+                     } else {
+                    document.getElementById('match').style.color = 'red';
+                    document.getElementById('match').innerHTML = 'Not Matched';
+                    //document.getElementById('submit').disabled = false;
+                    }   
+
+                }
+    }
+</script>

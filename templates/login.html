@@ -1,0 +1,141 @@
+{% load static %}
+
+{% if message == "1" %}
+<script>
+
+    alert("username or password is wrong");
+</script>
+
+{% endif %}
+
+{% if message == "2" %}
+<script>
+    alert("user created Succesfully !");
+</script>
+
+{% endif %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Pretty-Footer.css' %} ">
+
+    <style>
+            
+        *{color:#fff;}
+        
+        .bg{
+        
+            background:url("{% static '/images/salad.jpg' %}") repeat; width:100%; height:100%; 
+            /* background-color: gray;  */
+        }
+        .form-container{background-color: rgba(211, 101, 97, 0.698); border :0px solid #fff; padding: 35px 40px; margin-top: 15vh; -webkit-box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);
+        -moz-box-shadow: -1px 4px 50px 1px rgba(0,0,0,1);
+        box-shadow: -1px 4px 25px 1px rgba(0,0,0,1);} 
+        
+    </style>
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightblue;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="/"><img src="{% static 'logo.png' %}" style="width:50px;height: 50px;margin-top: -10px;"
+                        id="logo"><strong> Food Plaza </strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="about"><strong>About Us</strong></a></li>
+                    <li role="presentation"><a href="/"><strong>Home</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="bg">
+        <div class="container-fluid  " >
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <form class="form-container" action="verify" method="POST">
+                            {% csrf_token %}
+                            <h2 style="text-align: center;">Login</h2>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name" required>
+                              </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                   <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                  <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                            <button type="submit" name="submit" class="btn btn-success ">Login</button>
+                            &nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="registration">
+                            <button type="button" class="btn btn-success ">Sign Up</button></a>
+                            </div>
+                        </form>
+                        <br><br><br><br><br><br><br><br>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer style="background-color:lightblue;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 footer-navigation">
+                        <h3><a href="#">Food Plaza Website </a></h3>
+                        <p class="links"><a href="/">Home</a><strong> · </strong><a href="about">About us</a></p>
+                        <p class="company-name">Gulshan Baraik © 2020 </p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 footer-contacts">
+                        <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                            <p><span class="new-line-span">NIT Jamshedpur</span> Jharkhand, India</p>
+                        </div>
+                        <div><i class="fa fa-phone footer-contacts-icon"></i>
+                            <p class="footer-center-info email text-left"> +91 790 3189580</p>
+                        </div>
+                        <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                            <p> <a href="#" target="_blank">support@foodplaza.com</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-4 footer-about">
+                        <h4>About the company</h4>
+                        <p> Established by Gulshan in the year 2020.
+                        </p>
+                        <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a
+                                href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                    class="fa fa-linkedin"></i></a></div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+
+</html>

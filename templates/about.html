@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Pretty-Footer.css' %} ">
+
+    <style>
+            
+        /* *{color:#fff;} */
+        
+        .bg{
+        
+            background:url("{% static '/images/cc.jpeg' %}") no-repeat; height:100%; 
+            /* background-color: gray;  */
+        }
+
+        #promo {
+        text-align: center;
+        padding: 40px;
+        background: url("{% static '/images/cc.jpeg' %}") no-repeat;
+        background-size: cover;
+        margin-top: 65px;
+        }
+
+        @media (max-width:991px) {
+        #promo {
+            padding: 20px;
+        }
+        }
+
+        #promo .jumbotron {
+        border-radius: 20px;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.75);
+        max-width: 800px;
+        margin: 0 auto;
+        }
+
+        @media (max-width:991px) {
+        #promo .jumbotron {
+            padding: 20px;
+        }
+        }
+        
+    </style>
+    
+</head>
+
+<body class="bg">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:lightblue;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="/"><img src="{% static 'logo.png' %}" style="width:50px;height: 50px;margin-top: -10px;"
+                        id="logo"><strong> Food Plaza </strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="/"><strong>Home</strong></a></li>
+                    <li role="presentation"><a href="login"><strong>SignUp|Login</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="bg">
+    
+        <div id="promo">
+            <div class="jumbotron">
+                <h1 style="font: normal 70px Cookie,cursive; color:blue;">Welcome To About Us Page
+                </h1>
+                <p style="color:brown;">Food Plaza is a Food Recipe Portal.</p>
+                <p style="color:brown;">It is a powerful platform to manage recipes for food.</p>
+                <p style="color:brown;">Users can register accounts and create their own recipes or you can use the application to manage your own recipes.</p>
+                <p style="color:brown;">Food Plaza Recipe Portal will be very user-friendly such that a person who does no have much experience of the internet can also use the system with ease.</p><br>
+                <p style="font: normal 70px Cookie,cursive; font-size:40px; color:rgb(58, 102, 8);">" The Secret Ingredient Is Always Love "</p>
+            </div><br><br>
+        </div>
+
+    </div>
+    <br>
+    <br>
+
+    <footer style="background-color:lightblue;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 footer-navigation">
+                        <h3><a href="#">Food Plaza Website </a></h3>
+                        <p class="links"><a href="/">Home</a><strong> · </strong><a href="#">About us</a></p>
+                        <p class="company-name">Gulshan Baraik © 2020 </p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 footer-contacts">
+                        <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                            <p><span class="new-line-span">NIT Jamshedpur</span> Jharkhand, India</p>
+                        </div>
+                        <div><i class="fa fa-phone footer-contacts-icon"></i>
+                            <p class="footer-center-info email text-left"> +91 790 3189580</p>
+                        </div>
+                        <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                            <p> <a href="#" target="_blank">support@foodplaza.com</a></p>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-4 footer-about">
+                        <h4>About the company</h4>
+                        <p> Established by Gulshan in the year 2020.
+                        </p>
+                        <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a
+                                href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
+                                    class="fa fa-linkedin"></i></a></div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+
+</html>
