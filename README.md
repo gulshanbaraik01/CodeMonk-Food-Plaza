@@ -36,7 +36,9 @@ To perform this task:
         
     You will get the solution finally...
     
-    
+![Test Image 1](https://github.com/gulshanbaraik01/CodeMonk-Food-Plaza/blob/master/static/images/home.png)
+
+
 important modules||dependencies:
 
     You should aleready have to install or configured with Python and Django.
