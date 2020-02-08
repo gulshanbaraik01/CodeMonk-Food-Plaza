@@ -36,7 +36,10 @@ To perform this task:
         
     You will get the solution finally...
     
+    
 ![Test Image 1](https://github.com/gulshanbaraik01/CodeMonk-Food-Plaza/blob/master/static/images/home.png)
+
+
 
 
 important modules||dependencies:
@@ -58,3 +61,6 @@ Source Code Editor to performed this specific task:
 
       Visual Code 1.41.1 (64 bit)
       
+
+
+![Test Image 1](https://github.com/gulshanbaraik01/CodeMonk-Food-Plaza/blob/master/static/images/about.png)
